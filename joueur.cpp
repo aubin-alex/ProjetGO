@@ -21,14 +21,14 @@ Pierre* Joueur::jouer(){
     cout << "Colonne ? ";
     cin >> y;
     while (y<0 || y>TAILLE){
-        cout << "Erreur, non walide !!" << endl;
+        cout << "Erreur, non valide !!" << endl;
         cout << "Colonne ? ";
         cin >> y;
     }
     cout << "Ligne ? ";
     cin >> x;
     while (x<0 || x>TAILLE){
-        cout << "Erreur, non walide !!" << endl;
+        cout << "Erreur, non valide !!" << endl;
         cout << "Colonne ? ";
         cin >> x;
     }
