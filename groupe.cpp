@@ -2,14 +2,15 @@
 
 using namespace std;
 
-/*Groupe::Groupe(Pierre pierre){
-PierreCentrale=pierre;
+Groupe::Groupe(Pierre* pierre){
 
-//Rajouter les voisins d'une pierre au groupe de cette pierre
-if((PierreCentrale.x-1.col)==(PierreCentrale.col)){
-    PierreCentrale.x-1.Groupe=Groupe1;
-    }
-}*/
+
+    groupePierre.push_back(pierre);
+
+}
+
+
+//test si une pierre est sur les libertés d'un groupe, si oui on efface la liberté
  bool Groupe::modif_liberte(Pierre adversaire){
  int x=adversaire.getX();
  int y=adversaire.getY();
@@ -17,9 +18,9 @@ if((PierreCentrale.x-1.col)==(PierreCentrale.col)){
  bool a=false;
  while((a==false)||(i!=liste_libertes.size()))
      {
-     if((x == liste_libertes[i].first) && (y==liste_libertes[i].second))
+     if((x == liste_libertes[i].x) && (y==liste_libertes[i].y))
         {a=true;
-       liste_libertes.erase(i);
+       liste_libertes.erase(liste_libertes[i]);
         }
      i=i+1;
      }
