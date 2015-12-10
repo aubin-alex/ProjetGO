@@ -34,6 +34,8 @@ class GobanTest : public ::testing::Test{
 protected:
     virtual void SetUp(){
         plateau.jeu[2][3]='N';
+        plateau.jeu[5][5]='B';
+        plateau.jeu[5][4]='B';
     }
 
     virtual void TearDown(){
