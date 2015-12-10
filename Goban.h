@@ -9,6 +9,7 @@
 #include <iostream>
 #include <cstdlib>
 #include"gtest.h"
+#include"pierre.h"
 
 using namespace std;
 
@@ -21,6 +22,7 @@ private:
 
 public:
     char jeu[TAILLE][TAILLE];
+    vector< Groupe > liste_groupe;
     Goban(); //Crée le plateau vide
     ~Goban(); //Destructeur
     void affiche(); //fonction affichage
