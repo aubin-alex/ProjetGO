@@ -28,3 +28,9 @@ TEST_F(GobanTest,caseVide){
     EXPECT_TRUE(plateau.posepossible(2,3)); //erreur volontaire
 }
 
+TEST_F(PierreTest,testDeLibertes){
+    EXPECT_EQ(NULL, stone->test_liberte(plateau));
+    EXPECT_EQ(,stone2->test_liberte(plateau));
+}
+
+
