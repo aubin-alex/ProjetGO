@@ -2,7 +2,7 @@
 
 using namespace std;
 
-Pierre::Pierre(int _x, int _y, string col){
+Pierre::Pierre(int _x, int _y, char col){
     x=_x;
     y=_y;
     couleur=col;
