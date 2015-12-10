@@ -8,6 +8,7 @@
 #include <vector>
 #include <iostream>
 #include <cstdlib>
+#include"gtest.h"
 
 using namespace std;
 
@@ -16,13 +17,32 @@ const int TAILLE=5;
 class Goban{
 
 private:
-    vector<vector<char> > jeu; //Vecteur des cases
+     //Vecteur des cases
 
 public:
+    char jeu[TAILLE][TAILLE];
     Goban(); //Crée le plateau vide
     ~Goban(); //Destructeur
     void affiche(); //fonction affichage
     void updateCase(); //Mise à jour plateau
     bool posepossible(int x, int y);
 };
+
+class GobanTest : public ::testing::Test{
+protected:
+    virtual void SetUp(){
+        plateau.jeu[2][3]='N';
+    }
+
+    virtual void TearDown(){
+
+    }
+
+    bool vraie (){
+        return true;
+    }
+
+    Goban plateau;
+    Goban plateauVide;
+    };
 #endif

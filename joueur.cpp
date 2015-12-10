@@ -9,7 +9,7 @@ Joueur::~Joueur(){
     //do nothing
 }
 
-Joueur::Joueur(string col){
+Joueur::Joueur(char col){
     couleur=col;
     score=0;
 }
