@@ -23,6 +23,6 @@ public:
     ~Goban(); //Destructeur
     void affiche(); //fonction affichage
     void updateCase(); //Mise à jour plateau
-
+    bool posepossible(int x, int y);
 };
 #endif

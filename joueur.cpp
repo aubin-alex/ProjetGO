@@ -1,4 +1,5 @@
 #include"joueur.h"
+#include "Goban.h"
 //rajouter le fichier include du plateau
 //#include""
 
