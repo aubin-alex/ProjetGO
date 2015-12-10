@@ -3,23 +3,24 @@
 
 #include<iostream>
 #include"pierre.h"
+#include"Goban.h"
 
 using namespace std;
 
 class Joueur{
 
 private:
-    string couleur;
+    char couleur;
 
 
 public:
     int score;
     //Consructeur
-    Joueur(string col);
+    Joueur(char col);
     //Destructeur
     ~Joueur();
     //Accesseur
-    string getCouleur(){return couleur;}
+    char getCouleur(){return couleur;}
     //Méthode pour placer une pierre sur le plateau
     Pierre* jouer();
 
