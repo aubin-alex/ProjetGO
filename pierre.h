@@ -19,7 +19,7 @@ private:
 public:
     //Constructeur
     Pierre(int _x, int _y, char col);
-    void misegroupe(Goban.liste_groupe groupes);
+    void misegroupe(vector< Groupe > liste_groupe);
     //Destructeur
     ~Pierre();
     //Accesseurs
@@ -33,7 +33,7 @@ public:
 
 
 
-
+// classe test pierre
 class PierreTest : public :: testing::Test{
 
 

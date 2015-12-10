@@ -8,7 +8,11 @@ Pierre::Pierre(int _x, int _y, char col){
     couleur=col;
 }
 
-void misegroupe(Goban.liste_groupe groupes){
+// on teste chaque groupe de la même couleur, si la pierre
+// est dans la liberté d'un groupe on l'a met dedans, et on supprime la liberté
+//et on ajoute les nouvelles libertés.
+//On devrait aussi gérer la fusion des groupes.
+void Pierre::misegroupe(vector< Groupe > groupes){
 
     for (int i=0;i<groupes.size();i++){
         if (groupes[i].modif_liberte(Pierre)){
@@ -19,6 +23,7 @@ void misegroupe(Goban.liste_groupe groupes){
 
 }
 
+// Vecteur renvoyant les coordonnées des libertés d'une pierre si elle existe
 vector<Coordonees> test_liberte(Goban plateau){
     vector<Coordonees> VecLibertes;
     if (plateau.jeu[getX()-1][getY()]==' '){

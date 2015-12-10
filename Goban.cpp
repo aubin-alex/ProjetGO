@@ -1,5 +1,6 @@
 #include "Goban.h"
 
+// Création du tableau de jeu dans le costructeur
 Goban::Goban(){
 
     for (int j=0;j<TAILLE+1;j++){
@@ -9,6 +10,7 @@ Goban::Goban(){
     }
 }
 
+// Affichage du tableau de jeu
 void Goban::affiche(){
 
    for (int x=0;x<TAILLE+1;x++){
@@ -19,6 +21,7 @@ void Goban::affiche(){
     }
 }
 
+// Verifie que la case est vide avant de poser une pierre
 bool Goban::posepossible(int x, int y){
     if (jeu[x][y]==' '){
         return true;

@@ -30,6 +30,8 @@ public:
     bool posepossible(int x, int y);
 };
 
+
+// classe test goban
 class GobanTest : public ::testing::Test{
 protected:
     virtual void SetUp(){

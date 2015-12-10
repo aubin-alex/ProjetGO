@@ -17,9 +17,8 @@ private:
 public:
     //Constructeur
     Groupe(Pierre* pierre);
-    //
+
     bool modif_liberte(Pierre adversaire);
-    bool Groupe::ajout_liberte(Pierre ami);
     //Destructeur
     virtual ~Groupe();
 };
