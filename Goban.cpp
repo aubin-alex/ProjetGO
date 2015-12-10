@@ -19,6 +19,16 @@ void Goban::affiche(){
     }
 }
 
+bool Goban::posepossible(int x, int y){
+    if (jeu[x][y]==' '){
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+
 
 Goban::~Goban(){
 }
