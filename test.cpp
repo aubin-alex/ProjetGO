@@ -22,3 +22,9 @@ TEST_F(GobanTest, GobanVide){
 TEST_F(PierreTest,couleur){
     EXPECT_EQ('N',stone->getColor());
 }
+
+TEST_F(GobanTest,caseVide){
+    EXPECT_TRUE(plateau.posepossible(1,5));
+    EXPECT_TRUE(plateau.posepossible(2,3)); //erreur volontaire
+}
+
