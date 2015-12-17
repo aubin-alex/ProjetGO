@@ -3,6 +3,7 @@
 #include"groupe.h"
 #include"Goban.h"
 #include"gtest.h"
+#include"pierreTest.h"
 
 //using namespace std;
 
@@ -19,7 +20,7 @@ TEST_F(GobanTest, GobanVide){
 
 }
 
-/*TEST_F(PierreTest,couleur){
+TEST_F(PierreTest,couleur){
     EXPECT_EQ('N',stone->getColor());
 }
 
@@ -28,9 +29,11 @@ TEST_F(GobanTest,caseVide){
     EXPECT_TRUE(plateau.posepossible(2,3)); //erreur volontaire
 }
 
-TEST_F(PierreTest,testDeLibertes){
-    EXPECT_EQ(NULL, stone->test_liberte(plateau));
-    EXPECT_EQ(vector<pair<2,3> >,stone2->test_liberte(plateau));
-}*/
+TEST_F(GobanTest2, AppartenanceGroupe){            // Le test ne fonctionne pas (segmentation fault)
+                                                   // met en évidence une erreur dans la fonction appartientGroupe
+    EXPECT_EQ(2,plateau.liste_groupe.size());
+
+}
+
 
 

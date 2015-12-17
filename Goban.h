@@ -30,12 +30,11 @@ public:
     ~Goban();
      //fonction affichage
     void affiche();
-    //Mise à jour plateau
-    void updateCase();
     //Teste si la pose d'une pierre est possible
     bool posepossible(int x, int y);
-    //Teste si une pierre appartient à un group
-    void appartientGroupe(Pierre* pierre); e
+    //Teste si une pierre appartient à un groupe et on l'ajoute si c'est le cas, permet aussi la fusion
+    //des groupes
+    void appartientGroupe(Pierre* pierre);
     //Fonction pour savoir si la pierre est à proximité d'un groupe
     vector<Coordonees> test_liberte(Pierre* pierre);
 };
@@ -46,6 +45,14 @@ class GobanTest : public ::testing::Test{
 protected:
     virtual void SetUp(){
     //On crée 3 pierres pour tester notre code
+
+        Pierre noire(2,3,'N');
+        Pierre blanche1(5,5,'B');
+        Pierre* blanche2 = new Pierre(5,4,'B');
+
+        Groupe groupe(&blanche1);
+        plateau.liste_groupe.push_back(groupe);
+
         plateau.jeu[2][3]='N';
         plateau.jeu[5][5]='B';
         plateau.jeu[5][4]='B';
@@ -61,6 +68,42 @@ protected:
 
     Goban plateau;
     Goban plateauVide;
+
+
 };
+
+// classe test goban
+class GobanTest2 : public ::testing::Test{
+protected:
+    virtual void SetUp(){
+    //On crée 3 pierres pour tester notre code
+
+        Pierre noire(2,3,'N');
+        Pierre blanche1(5,5,'B');
+        Pierre* blanche2 = new Pierre(5,4,'B');
+
+        Groupe groupe(&blanche1);
+        plateau.liste_groupe.push_back(groupe);
+        plateau.appartientGroupe(blanche2);
+        plateau.jeu[2][3]='N';
+        plateau.jeu[5][5]='B';
+        plateau.jeu[5][4]='B';
+    }
+
+    virtual void TearDown(){
+
+    }
+
+    bool vraie (){
+        return true;
+    }
+
+    Goban plateau;
+    Goban plateauVide;
+
+
+};
+
+
 
 #endif
