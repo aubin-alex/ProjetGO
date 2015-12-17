@@ -19,7 +19,7 @@ TEST_F(GobanTest, GobanVide){
 
 }
 
-TEST_F(PierreTest,couleur){
+/*TEST_F(PierreTest,couleur){
     EXPECT_EQ('N',stone->getColor());
 }
 
@@ -30,7 +30,7 @@ TEST_F(GobanTest,caseVide){
 
 TEST_F(PierreTest,testDeLibertes){
     EXPECT_EQ(NULL, stone->test_liberte(plateau));
-    EXPECT_EQ(,stone2->test_liberte(plateau));
-}
+    EXPECT_EQ(vector<pair<2,3> >,stone2->test_liberte(plateau));
+}*/
 
 

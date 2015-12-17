@@ -8,18 +8,18 @@
 #include "coordonnees.h"
 
 
+
 using namespace std;
 
 class Groupe {
 
 private:
     vector<Coordonees> liste_libertes;//liste des libertés d'un groupe
-    vector<Pierre*> groupePierres;// vecteur des pierres composant un groupe
     char couleur;
 public:
     //Constructeur
-    Groupe(Pierre* pierre, Goban plateau);
-
+    Groupe(Pierre* pierre);
+    vector<Pierre*> groupePierres;// vecteur des pierres composant un groupe
     //Accesseur de la couleur
     char getColor(){return couleur;}
 

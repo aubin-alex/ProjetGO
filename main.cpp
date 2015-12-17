@@ -28,7 +28,7 @@ int factoriel (int nombre){
 }
 
 TEST(factoriel_test, GereLesValeursPositives){
-    //EXPECT_EQ(1,factoriel(1));
+    EXPECT_EQ(1,factoriel(1));
     //EXPECT_EQ(430, factoriel(5));
     EXPECT_EQ(24, factoriel(4));
 }

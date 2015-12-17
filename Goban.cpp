@@ -1,4 +1,5 @@
 #include "Goban.h"
+#include "groupe.h"
 
 // Création du tableau de jeu dans le costructeur
 Goban::Goban(){
@@ -45,21 +46,21 @@ void Goban::appartientGroupe(Pierre* pierre){
     //On parocurt la liste des groupes existants sur le plateau
     for (int i=0 ; i<liste_groupe.size() ; i++){
         //On regarde la couleur de la pierre pour l'ajouter à un groupe de la même couleur
-        if (col==liste_groupe[i].couleur){
+        if (col==liste_groupe[i].getColor()){
         //La pierre qu'on ajoute peut appartenir à plusieurs groupes
         //On va donc tester chaque groupe un par un, on ajoute la pierre au premier groupe trouvé dont les libertés contiennent les coordonnées de notre pierre
             if (nb=0){
-                appartient=liste_groupe[i].modif_liberte;
-                pierre.push_back(liste_groupe[i].groupePierre);
+                appartient=liste_groupe[i].modif_libertes(*pierre);
+                liste_groupe[i].groupePierres.push_back(pierre);
                 nb+=1;
                 memoire=i;
             }
             else{
                 //Si la pierre appartient à un deuxième groupe, on fusionne le deuxième groupe avec le premier
-                liste_groupe[memoire].groupePierre.insert(liste_groupe[memoire].groupePierre.end(), liste_groupe[i].groupePierre.begin(), liste_groupe[i].groupePierre.end());
+                liste_groupe[memoire].groupePierres.insert(liste_groupe[memoire].groupePierres.end(), liste_groupe[i].groupePierres.begin(), liste_groupe[i].groupePierres.end());
                 //et on efface le deuxième groupe
-                liste_groupe[i].erase();
-                ~liste_groupe[i]();
+                liste_groupe.erase(liste_groupe.begin()+i);
+                liste_groupe[i].~Groupe();
                 i=i-1;
             }
         }
@@ -69,7 +70,7 @@ void Goban::appartientGroupe(Pierre* pierre){
 // Vecteur renvoyant les coordonnées des libertés d'une pierre si elle existe
 vector<Coordonees> Goban::test_liberte(Pierre* pierre){
     vector<Coordonees> VecLibertes;
-    if (jeu[pierre->getX()-1][pierre.getY()]==' '){
+    if (jeu[pierre->getX()-1][pierre->getY()]==' '){
         VecLibertes.push_back(Coordonees(pierre->getX()-1,pierre->getY()));
     }
     if (jeu[pierre->getX()+1][pierre->getY()]==' '){

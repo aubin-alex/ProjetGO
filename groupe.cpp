@@ -2,18 +2,18 @@
 
 using namespace std;
 
-Groupe::Groupe(Pierre* pierre, Goban plateau){
+Groupe::Groupe(Pierre* pierre){
 
 
-    groupePierre.push_back(pierre);
+    groupePierres.push_back(pierre);
     couleur = pierre->getColor();
-    liste_libertes = pierre.test_liberte(plateau);
+    //liste_libertes = pierre.test_liberte(plateau);
 
 }
 
 
 //test si une pierre est sur les libertés d'un groupe, si oui on efface la liberté, et si le groupe n'a alors plus de liberté on le supprime
- bool Groupe::modif_liberte(Pierre pierre){
+ bool Groupe::modif_libertes(Pierre pierre){
     int x=pierre.getX();
     int y=pierre.getY();
     int i=0;
@@ -23,7 +23,7 @@ Groupe::Groupe(Pierre* pierre, Goban plateau){
     while((a==false)||(i!=liste_libertes.size())){
         if((x == liste_libertes[i].x) && (y==liste_libertes[i].y)){
             a=true;
-            liste_libertes.erase(liste_libertes[i]);
+            liste_libertes.erase(liste_libertes.begin()+i);
         }
         i=i+1;
      }
@@ -31,7 +31,7 @@ Groupe::Groupe(Pierre* pierre, Goban plateau){
      return a;
      if (liste_libertes.size()==0)
     {
-        ~Groupe();
+        this->~Groupe();
     }
  }
 

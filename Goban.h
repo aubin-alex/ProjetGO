@@ -10,7 +10,7 @@
 #include <cstdlib>
 #include"gtest.h"
 #include "groupe.h"
-
+#include "pierre.h"
 
 using namespace std;
 
