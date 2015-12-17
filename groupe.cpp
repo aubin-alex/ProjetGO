@@ -4,8 +4,7 @@ using namespace std;
 
 Groupe::Groupe(Pierre* pierre){
 
-
-    groupePierre.push_back(pierre);
+    groupePierres.push_back(pierre);
 
 }
 

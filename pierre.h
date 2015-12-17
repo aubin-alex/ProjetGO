@@ -3,9 +3,8 @@
 
 #include<iostream>
 #include"gtest.h"
-#include"groupe.h"
 #include"coordonnees.h"
-#include"Goban.h"
+#include "Goban.h"
 
 using namespace std;
 
@@ -19,7 +18,7 @@ private:
 public:
     //Constructeur
     Pierre(int _x, int _y, char col);
-    void misegroupe(vector< Groupe > liste_groupe);
+    //void misegroupe(vector< Groupe > liste_groupe);
     //Destructeur
     ~Pierre();
     //Accesseurs

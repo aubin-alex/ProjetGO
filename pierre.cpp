@@ -12,7 +12,7 @@ Pierre::Pierre(int _x, int _y, char col){
 // est dans la liberté d'un groupe on l'a met dedans, et on supprime la liberté
 //et on ajoute les nouvelles libertés.
 //On devrait aussi gérer la fusion des groupes.
-void Pierre::misegroupe(vector< Groupe > groupes){
+/*void Pierre::misegroupe(vector< Groupe > groupes){
 
     for (int i=0;i<groupes.size();i++){
         if (groupes[i].modif_liberte(Pierre)){
@@ -21,7 +21,7 @@ void Pierre::misegroupe(vector< Groupe > groupes){
         }
     }
 
-}
+}*/
 
 // Vecteur renvoyant les coordonnées des libertés d'une pierre si elle existe
 vector<Coordonees> test_liberte(Goban plateau){
