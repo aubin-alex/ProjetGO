@@ -28,6 +28,7 @@ public:
     void affiche(); //fonction affichage
     void updateCase(); //Mise à jour plateau
     bool posepossible(int x, int y);
+    void appartientGroupe(Pierrre pierre); //Teste si une pierre appartient à un groupe
 };
 
 
