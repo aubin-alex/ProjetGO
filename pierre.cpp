@@ -9,8 +9,6 @@ Pierre::Pierre(int _x, int _y, char col){
 }
 
 
-<<<<<<< HEAD
-=======
 // Vecteur renvoyant les coordonnées des libertés d'une pierre si elle existe
 vector<Coordonees> Pierre::test_liberte(Goban plateau){
     vector<Coordonees> VecLibertes;
@@ -41,8 +39,6 @@ vector<Coordonees> Pierre::test_liberte(Goban plateau){
     return VecLibertes;
 };
 
-
->>>>>>> 4ec04791a00d1cb2fd450687c63fb0b55c112152
 
 Pierre::~Pierre(){
     //do nothing
