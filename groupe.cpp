@@ -9,9 +9,6 @@ Groupe::Groupe(Pierre* pierre, Goban plateau){
     couleur = pierre->getColor();
     liste_libertes = pierre.test_liberte(plateau);
 
-
-
-
 }
 
 

@@ -20,6 +20,9 @@ public:
     //Constructeur
     Groupe(Pierre* pierre, Goban plateau);
 
+    //Accesseur de la couleur
+    char getColor(){return couleur;}
+
     bool modif_libertes(Pierre pierre);//regarde si la pose d'une pierre modifie les libertés du groupe
     //Destructeur
     virtual ~Groupe();
