@@ -10,8 +10,11 @@ using namespace std;
 class Pierre{
 
 private:
+    //ligne de la pierre
     int x;
+    //colonne de la pierre
     int y;
+    //couleur de la pierre
     char couleur;
 
 public:

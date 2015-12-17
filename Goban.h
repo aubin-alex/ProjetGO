@@ -35,7 +35,7 @@ public:
     //Teste si la pose d'une pierre est possible
     bool posepossible(int x, int y);
     //Teste si une pierre appartient à un group
-    void appartientGroupe(Pierre* pierre); e
+    void appartientGroupe(Pierre* pierre);
     //Fonction pour savoir si la pierre est à proximité d'un groupe
     vector<Coordonees> test_liberte(Pierre* pierre);
 };
