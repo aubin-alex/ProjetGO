@@ -24,6 +24,7 @@ void Goban::affiche(){
 
 // Verifie que la case est vide avant de poser une pierremodif_liberte
 bool Goban::posepossible(int x, int y){
+    //si la case est vide
     if (jeu[x][y]==' '){
         return true;
     }
@@ -58,9 +59,11 @@ void Goban::appartientGroupe(Pierre* pierre){
             else{
                 //Si la pierre appartient à un deuxième groupe, on fusionne le deuxième groupe avec le premier
                 liste_groupe[memoire].groupePierres.insert(liste_groupe[memoire].groupePierres.end(), liste_groupe[i].groupePierres.begin(), liste_groupe[i].groupePierres.end());
-                //et on efface le deuxième groupe
+                //et on efface la liste des groupes le deuxième groupe qui touche la pierre
                 liste_groupe.erase(liste_groupe.begin()+i);
+                //on efface le deuxieme groupe qui touche la pierre
                 liste_groupe[i].~Groupe();
+                //comme on décale les éléments suivant du vecteur, on décrement le i
                 i=i-1;
             }
         }
@@ -73,30 +76,38 @@ vector<Coordonees> Goban::test_liberte(Pierre* pierre){
 
     //On vérifie que les coordonnées des libertés sont bien dans le Calculer sa couverture de test avec gcov/lcovplateau
     if (pierre->getX()-1>=0){
+        //si la case en dessous est vide
         if (jeu[pierre->getX()-1][pierre->getY()]==' '){
+        //on ajoute la case à la liste des libertés
             VecLibertes.push_back(Coordonees(pierre->getX()-1,pierre->getY()));
         }
 
     }
 
     if (pierre->getX()+1<TAILLE){
+        //si la case au dessus est vide
         if (jeu[pierre->getX()+1][pierre->getY()]==' '){
+            //on ajoute la case à la liste des libertés
             VecLibertes.push_back(Coordonees(pierre->getX()+1,pierre->getY()));
         }
     }
 
     if (pierre->getY()>=0){
+        //si la case à droite est vide
         if (jeu[pierre->getX()][pierre->getY()-1]==' '){
+            //on ajoute la case à la liste des libertés
             VecLibertes.push_back(Coordonees(pierre->getX(),pierre->getY()-1));
         }
     }
 
     if (pierre->getY()+1<TAILLE){
+        //si la case à gauche est vide
         if (jeu[pierre->getX()][pierre->getY()+1]==' '){
+            //on ajoute la case à la liste des libertés
             VecLibertes.push_back(Coordonees(pierre->getX(),pierre->getY()+1));
         }
     }
-
+    //on renvoie la liste des libertés
     return VecLibertes;
 };
 

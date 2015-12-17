@@ -14,12 +14,16 @@ using namespace std;
 class Groupe {
 
 private:
-    vector<Coordonees> liste_libertes;//liste des libertés d'un groupe
+    //liste des libertés d'un groupe
+    vector<Coordonees> liste_libertes;
+    //couleur des pierres du groupe
     char couleur;
+
 public:
-    //Constructeur
+    //Constructeur avec en paramètre la premiere pierre du groupe
     Groupe(Pierre* pierre);
-    vector<Pierre*> groupePierres;// vecteur des pierres composant un groupe
+    // vecteur des pierres composant un groupe
+    vector<Pierre*> groupePierres;
     //Accesseur de la couleur
     char getColor(){return couleur;}
     //Regarde si la pose d'une pierre modifie les libertés du groupe
