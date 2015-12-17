@@ -2,7 +2,7 @@
 #define PIERRE_H_INCLUDED
 
 #include<iostream>
-#include"gtest.h"
+#include "gtest.h"
 #include"coordonnees.h"
 #include "Goban.h"
 
@@ -24,8 +24,7 @@ public:
     int getX(){return x;}
     int getY(){return y;}
     char getColor(){return couleur;}
-    //Fonction pour savoir si la pierre est à proximité d'un groupe
-    vector<Coordonees> test_liberte(Goban plateau);
+
 
 
 };

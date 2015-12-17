@@ -29,7 +29,9 @@ public:
     void affiche(); //fonction affichage
     void updateCase(); //Mise à jour plateau
     bool posepossible(int x, int y);
-    void appartientGroupe(Pierrre pierre); //Teste si une pierre appartient à un groupe
+    void appartientGroupe(Pierre* pierre); //Teste si une pierre appartient à un groupe
+    //Fonction pour savoir si la pierre est à proximité d'un groupe
+    vector<Coordonees> test_liberte(Pierre* pierre);
 };
 
 

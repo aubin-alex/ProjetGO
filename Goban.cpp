@@ -65,3 +65,23 @@ void Goban::appartientGroupe(Pierre* pierre){
         }
     }
 }
+
+// Vecteur renvoyant les coordonnées des libertés d'une pierre si elle existe
+vector<Coordonees> Goban::test_liberte(Pierre* pierre){
+    vector<Coordonees> VecLibertes;
+    if (jeu[pierre->getX()-1][pierre.getY()]==' '){
+        VecLibertes.push_back(Coordonees(pierre->getX()-1,pierre->getY()));
+    }
+    if (jeu[pierre->getX()+1][pierre->getY()]==' '){
+        VecLibertes.push_back(Coordonees(pierre->getX()+1,pierre->getY()));
+    }
+    if (jeu[pierre->getX()][pierre->getY()-1]==' '){
+        VecLibertes.push_back(Coordonees(pierre->getX(),pierre->getY()-1));
+    }
+     if (jeu[pierre->getX()][pierre->getY()+1]==' '){
+        VecLibertes.push_back(Coordonees(pierre->getX(),pierre->getY()+1));
+    }
+
+    return VecLibertes;
+};
+

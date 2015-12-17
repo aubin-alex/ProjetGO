@@ -4,16 +4,13 @@ using namespace std;
 
 Groupe::Groupe(Pierre* pierre, Goban plateau){
 
-<<<<<<< HEAD
-    groupePierres.push_back(pierre);
-=======
 
     groupePierre.push_back(pierre);
     couleur = pierre->getColor();
     liste_libertes = pierre.test_liberte(plateau);
 
 
->>>>>>> 79d77ecee85af02ebd48bbeda5385a447d94a4c5
+
 
 }
 

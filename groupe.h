@@ -7,6 +7,7 @@
 #include <vector>
 #include "coordonnees.h"
 
+
 using namespace std;
 
 class Groupe {
