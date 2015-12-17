@@ -9,7 +9,7 @@
 
 using namespace std;
 
-class Groupe{
+class Groupe {
 
 private:
     vector<Coordonees> liste_libertes;//liste des libertés d'un groupe

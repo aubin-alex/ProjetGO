@@ -3,9 +3,8 @@
 
 #include<iostream>
 #include"gtest.h"
-#include"groupe.h"
 #include"coordonnees.h"
-#include"Goban.h"
+#include "Goban.h"
 
 using namespace std;
 
