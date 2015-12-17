@@ -71,6 +71,7 @@ void Goban::appartientGroupe(Pierre* pierre){
 vector<Coordonees> Goban::test_liberte(Pierre* pierre){
     vector<Coordonees> VecLibertes;
 
+    //On vérifie que les coordonnées des libertés sont bien dans le plateau
     if (pierre->getX()-1>=0){
         if (jeu[pierre->getX()-1][pierre->getY()]==' '){
             VecLibertes.push_back(Coordonees(pierre->getX()-1,pierre->getY()));

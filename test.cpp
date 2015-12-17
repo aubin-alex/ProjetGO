@@ -7,7 +7,7 @@
 //using namespace std;
 
 
-
+//Test pour vérifier si le goban est vide
 TEST_F(GobanTest, GobanVide){
 
     for (int i=0;i<TAILLE+1;i++){

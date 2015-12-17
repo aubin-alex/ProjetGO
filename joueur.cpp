@@ -21,6 +21,7 @@ Pierre* Joueur::jouer(){
     cout << "Choix de la position :" << endl;
     cout << "Colonne ? ";
     cin >> y;
+    //On vérifie la validité du nombre entré
     while (y<0 || y>TAILLE){
         cout << "Erreur, non valide !!" << endl;
         cout << "Colonne ? ";
@@ -28,6 +29,7 @@ Pierre* Joueur::jouer(){
     }
     cout << "Ligne ? ";
     cin >> x;
+    //On vérifie la validité du nombre entré
     while (x<0 || x>TAILLE){
         cout << "Erreur, non valide !!" << endl;
         cout << "Colonne ? ";

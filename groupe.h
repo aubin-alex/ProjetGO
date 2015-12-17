@@ -22,12 +22,11 @@ public:
     vector<Pierre*> groupePierres;// vecteur des pierres composant un groupe
     //Accesseur de la couleur
     char getColor(){return couleur;}
-
-    bool modif_libertes(Pierre pierre);//regarde si la pose d'une pierre modifie les libertés du groupe
+    //Regarde si la pose d'une pierre modifie les libertés du groupe
+    bool modif_libertes(Pierre pierre);
     //Destructeur
     virtual ~Groupe();
 
-    //
 };
 
 #endif

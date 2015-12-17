@@ -24,12 +24,18 @@ private:
 public:
     char jeu[TAILLE][TAILLE];
     vector<Groupe> liste_groupe;
-    Goban(); //Crée le plateau vide
-    ~Goban(); //Destructeur
-    void affiche(); //fonction affichage
-    void updateCase(); //Mise à jour plateau
+    //Crée le plateau vide
+    Goban();
+    //Destructeur
+    ~Goban();
+     //fonction affichage
+    void affiche();
+    //Mise à jour plateau
+    void updateCase();
+    //Teste si la pose d'une pierre est possible
     bool posepossible(int x, int y);
-    void appartientGroupe(Pierre* pierre); //Teste si une pierre appartient à un groupe
+    //Teste si une pierre appartient à un group
+    void appartientGroupe(Pierre* pierre); e
     //Fonction pour savoir si la pierre est à proximité d'un groupe
     vector<Coordonees> test_liberte(Pierre* pierre);
 };
@@ -39,6 +45,7 @@ public:
 class GobanTest : public ::testing::Test{
 protected:
     virtual void SetUp(){
+    //On crée 3 pierres pour tester notre code
         plateau.jeu[2][3]='N';
         plateau.jeu[5][5]='B';
         plateau.jeu[5][4]='B';
